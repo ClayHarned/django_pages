@@ -1,8 +1,11 @@
 # pages/views.py
 from django.views.generic import TemplateView
 
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+class MyInfoPageView(TemplateView):
+    template_name = 'MyInfo.html'
 
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
+class VotingReminderPageView(TemplateView):
+    template_name = 'VotingReminder.html'
+
+class PollingLocationPageView(TemplateView):
+    template_name = 'PollingLocation.html'
