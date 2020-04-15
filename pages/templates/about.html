@@ -2,5 +2,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Trying to get an api to work</h2>
+<script type="text/javascript" src="https://tool.votinginfoproject.org/app.js"></script>
+<div id="_vit"></div>
+<script type="text/javascript">vit.load({
+    modal: true,
+    theme: 'https://tool.votinginfoproject.org/images/theme3.png',
+    officialOnly: false,
+    title: 'Polling Location',
+    subtitle: 'Enter Address',
+    width: '640px',
+    height: '480px',
+    colors: {
+      'header': '#a4a4a4',
+      'landscapeBackgroundHeader': '#909090'
+    },
+    language: 'en',
+});</script>
 {% endblock content %}
