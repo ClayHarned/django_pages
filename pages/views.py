@@ -9,3 +9,9 @@ class VotingReminderPageView(TemplateView):
 
 class PollingLocationPageView(TemplateView):
     template_name = 'PollingLocation.html'
+
+class PoliticianProfilesPageView(TemplateView):
+    template_name = 'PoliticianProfiles.html'
+
+class VotingQuestionsAndTipsPageView(TemplateView):
+    template_name = 'VotingQuestionsAndTips.html'

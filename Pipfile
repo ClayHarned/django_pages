@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "*"
 gunicorn = "*"
+django-bootstrap4 = "*"
+python-dateutil = "*"
 
 [requires]
 python_version = "3.7"
