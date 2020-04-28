@@ -1,8 +1,11 @@
-<!-- pages/templates/home.html -->
+<!-- tweets/templates/home.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Find more about who you're voting for!</h1>
-<h2>Simple cardlike profiles for each candidate sorted by office</h2>
-<h2>Each card containing name, picture, short bio, top 3 policy priorities, party, link to website</h2>
+  {% for profile in object_list %}
+    <div class="profile-entry">
+    <h4>{{ profile.body }}</h4>
+    <p>{{ profile.user }}</p>
+    </div>
+  {% endfor %}
 {% endblock content %}
