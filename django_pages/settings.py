@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'bootstrap_datepicker_plus',
     'users',
     'Profiles',
     'pages' #new
@@ -74,6 +75,9 @@ TEMPLATES = [
 ]
 
 BOOTSTRAP4 = { 'include_jquery': True }
+
+LOGIN_REDIRECT_URL = 'PoliticianProfiles' # new
+LOGOUT_REDIRECT_URL = 'PoliticianProfiles' # new
 
 WSGI_APPLICATION = 'django_pages.wsgi.application'
 
