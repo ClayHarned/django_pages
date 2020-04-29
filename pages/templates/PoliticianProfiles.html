@@ -3,9 +3,28 @@
 
 {% block content %}
   {% for profile in object_list %}
-    <div class="profile-entry">
-    <h4>{{ profile.body }}</h4>
+  <div class="card">
+  <div class="card-header">
+    Candidate: {{ profile.candidate}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Running for {{ profile.position }}</li>
+    <li class="list-group-item">Location: {{ profile.location }}</li>
+    <li class="list-group-item">Member of the {{ profile.party }} party</li>
+    <li class="list-group-item">Top Policies are {{ profile.toppolicies }}</li>
+    <li class="list-group-item">{{ profile.user }} uploaded this card</li>
+  </ul>
+  </div>
+  <br/>
+
+
+    <!-- <div class="profile-entry">
+    <h4>{{ profile.candidate }}</h4>
+    <p>{{ profile.position }}</p>
+    <p>{{ profile.location }}</p>
+    <p>{{ profile.party }}</p>
+    <p>{{ profile.TopPolicies }}</p>
     <p>{{ profile.user }}</p>
-    </div>
+    </div> -->
   {% endfor %}
 {% endblock content %}

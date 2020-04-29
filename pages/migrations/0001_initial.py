@@ -19,7 +19,11 @@ class Migration(migrations.Migration):
             name='Profile',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('body', models.CharField(max_length=255)),
+                ('candidate', models.CharField(max_length=255)),
+                ('position', models.CharField(max_length=255)),
+                ('location', models.CharField(max_length=255)),
+                ('party', models.CharField(max_length=255)),
+                ('toppolicies', models.CharField(max_length=255)),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('updated_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL)),

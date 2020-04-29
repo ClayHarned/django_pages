@@ -12,7 +12,7 @@ class ProfileListView(ListView):
 class ProfileCreateView(CreateView):
     model = Profile
     template_name = 'profile_new.html'
-    fields = ['user', 'body']
+    fields = ['candidate', 'position', 'location', 'party', 'toppolicies', 'user']
 
     def get_success_url(self):
         return reverse('PoliticianProfiles')
