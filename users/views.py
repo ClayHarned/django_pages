@@ -4,16 +4,19 @@ from django.views import generic
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import CustomUser
 from django.contrib.auth.views import PasswordChangeView, PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin # new
 
-class SignUpView(generic.CreateView):
+class SignUpView(SuccessMessageMixin, generic.CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+    success_message = 'Account was created successfully.' # new
 
-class UserUpdateView(generic.UpdateView):
+class UserUpdateView(SuccessMessageMixin, generic.UpdateView):
     form_class = CustomUserChangeForm
     success_url = reverse_lazy('PoliticianProfiles')
     template_name = 'update.html'
+    success_message = 'User profile updated.' # new
 
     # This keeps users from accessing the profile of other users.
     def get_queryset(self):
@@ -23,10 +26,12 @@ class UserUpdateView(generic.UpdateView):
         else:
             return CustomUser.objects.filter(id=user.id)
 
-class UserPasswordChangeView(PasswordChangeView):
+class UserPasswordChangeView(SuccessMessageMixin,PasswordChangeView):
     success_url = reverse_lazy('PoliticianProfiles')
     template_name = 'change_password.html'
+    success_message = 'Password changed.'
 
-class UserPasswordResetView(PasswordResetView):
+class UserPasswordResetView(SuccessMessageMixin, PasswordResetView):
     success_url = reverse_lazy('login')
     template_name = 'reset_password.html'
+    success_message = 'Check your email for a reset link.'
