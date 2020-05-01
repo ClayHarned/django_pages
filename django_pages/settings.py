@@ -69,6 +69,18 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+
+LOGIN_REDIRECT_URL = 'PoliticianProfiles'
+LOGOUT_REDIRECT_URL = 'PoliticianProfiles'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # new
+EMAIL_HOST = 'smtp.sendgrid.net' # new
+EMAIL_HOST_USER = os.getenv('SENDGRID_USERNAME') #new
+EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_PASSWORD')
+EMAIL_PORT = 587 # new
+EMAIL_USE_TLS = True # new
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
